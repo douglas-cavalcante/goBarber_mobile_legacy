@@ -1,7 +1,7 @@
 import styled from 'styled-components/native';
 
 export const Container = styled.View`
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   padding: 20px;
   border-radius: 4px;
   background: #fff;
@@ -10,6 +10,8 @@ export const Container = styled.View`
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+
+  opacity: ${props => (props.past ? 0.6 : 1)};
 `;
 
 export const Left = styled.View`
