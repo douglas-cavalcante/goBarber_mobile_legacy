@@ -1,5 +1,4 @@
 import React from 'react';
-import Icon from 'react-native-vector-icons/MaterialIcons';
 import {
   createAppContainer,
   createSwitchNavigator,
@@ -7,15 +6,17 @@ import {
   createStackNavigator,
 } from 'react-navigation';
 
+import Icon from 'react-native-vector-icons/MaterialIcons';
+
 import SignIn from './pages/SignIn';
 import SignUp from './pages/SignUp';
 
+import SelectProvider from './pages/New/SelectProvider';
+import SelectDateTime from './pages/New/SelectDateTime';
+import Confirm from './pages/New/Confirm';
+
 import Dashboard from './pages/Dashboard';
 import Profile from './pages/Profile';
-
-import SelectorProvider from '~/pages/New/SelectProvider';
-import SelectDateTime from '~/pages/New/SelectDateTime';
-import Confirm from '~/pages/New/Confirm';
 
 export default (isSigned = false) =>
   createAppContainer(
@@ -31,14 +32,14 @@ export default (isSigned = false) =>
             New: {
               screen: createStackNavigator(
                 {
-                  SelectorProvider,
+                  SelectProvider,
                   SelectDateTime,
                   Confirm,
                 },
                 {
                   defaultNavigationOptions: {
                     headerTransparent: true,
-                    headerTintColor: true,
+                    headerTintColor: '#FFF',
                     headerLeftContainerStyle: {
                       marginLeft: 20,
                     },
@@ -46,9 +47,9 @@ export default (isSigned = false) =>
                 }
               ),
               navigationOptions: {
-                tarBarVisible: false,
-                tarBarLabel: 'Agendar',
-                tarBarIcon: (
+                tabBarVisible: false,
+                tabBarLabel: 'Agendar',
+                tabBarIcon: (
                   <Icon
                     name="add-circle-outline"
                     size={20}
@@ -60,6 +61,7 @@ export default (isSigned = false) =>
             Profile,
           },
           {
+            resetOnBlur: true,
             tabBarOptions: {
               keyboardHidesTabBar: true,
               activeTintColor: '#FFF',
