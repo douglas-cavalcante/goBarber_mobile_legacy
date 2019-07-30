@@ -23,7 +23,7 @@ export const Title = styled.Text`
 
 export const Form = styled.ScrollView.attrs({
   contentContainerStyle: { padding: 30 },
-  showVerticalScrollIndicator: false,
+  showsVerticalScrollIndicator: false,
 })`
   align-self: stretch;
 `;
